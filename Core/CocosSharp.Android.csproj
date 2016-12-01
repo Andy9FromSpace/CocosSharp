@@ -11,7 +11,8 @@
     <AssemblyName>CocosSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <DocumentationFile>bin\Android\Debug\CocosSharp.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,12 +43,12 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="OpenTK-1.0" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="OpenTK-1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Math\CCEaseMath.cs" />
@@ -324,6 +326,7 @@
     <Compile Include="Predefine\CCTypes.cs" />
     <Compile Include="Predefine\ICCUpdatable.cs" />
     <Compile Include="Camera\CCCamera.cs" />
+    <Compile Include="SceneState.cs" />
     <Compile Include="Textures\CCTexture2D.cs" />
     <Compile Include="Textures\CCTextureAtlas.cs" />
     <Compile Include="Textures\CCTextureCache.cs" />
@@ -360,24 +363,14 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="EmbeddableView\" />
-    <Folder Include="Actions\" />
-    <Folder Include="Nodes\" />
-    <Folder Include="Camera\" />
-    <Folder Include="Support\" />
-    <Folder Include="Audio\" />
-    <Folder Include="Math\" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.Android.csproj">
       <Project>{BA9476CF-99BA-4D03-92F2-73D2C5E58883}</Project>
       <Name>MonoGame.Framework.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.Android.csproj">
-      <Project>{565129E0-4EE5-4F6F-B403-C3484C9740BE}</Project>
-      <Name>Lidgren.Network.Android</Name>
-    </ProjectReference>
   </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>copy /y "$(ProjectDir)\project.android.json" "$(ProjectDir)\project.json"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

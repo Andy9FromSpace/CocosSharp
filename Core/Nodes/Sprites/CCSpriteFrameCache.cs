@@ -164,7 +164,7 @@ namespace CocosSharp
                 {
                     // get values
                     CCSize spriteSize = CCSize.Parse (frameDict["spriteSize"].AsString);
-                    CCPoint spriteOffset = CCPoint.Parse(frameDict["spriteOffset"].AsString);
+                    CCPoint spriteOffset = CCPoint.Parse(frameDict["spriteOffset"].AsString) / 2;
                     CCSize spriteSourceSize = CCSize.Parse (frameDict["spriteSourceSize"].AsString);
                     CCRect textureRect = CCRect.Parse(frameDict["textureRect"].AsString);
                     bool textureRotated = false;

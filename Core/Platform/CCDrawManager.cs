@@ -563,22 +563,25 @@ namespace CocosSharp
             }
 
             ResetDevice();
-            if (hasStencilBuffer)
+            if (!SceneState.SceneInTransition)
             {
-                try
+                if (hasStencilBuffer)
                 {
-                    Clear(CCColor4B.Transparent, 1, 0);
+                    try
+                    {
+                        Clear(CCColor4B.Transparent, 1, 0);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // no stencil buffer
+                        hasStencilBuffer = false;
+                        Clear(CCColor4B.Transparent);
+                    }
                 }
-                catch (InvalidOperationException)
+                else
                 {
-                    // no stencil buffer
-                    hasStencilBuffer = false;
                     Clear(CCColor4B.Transparent);
                 }
-            }
-            else
-            {
-                Clear(CCColor4B.Transparent);
             }
 
             DrawCount = 0;

@@ -165,6 +165,7 @@ namespace CocosSharp
 
         public override void OnEnter()
         {
+            SceneState.SceneInTransition = true;
             base.OnEnter();
 
             // Disable events while transitioning
@@ -198,6 +199,8 @@ namespace CocosSharp
             // InScene should not receive the OnEnter callback
             // only the OnEnterTransitionDidFinish
             InScene.OnEnterTransitionDidFinish();
+
+            SceneState.SceneInTransition = false;
         }
 
         public virtual void Reset(float t, CCScene scene)

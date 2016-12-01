@@ -1,0 +1,13 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    "MonoAndroid,Version=v6.0": {},
+    "MonoAndroid,Version=v6.0/win": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    "MonoAndroid,Version=v6.0": []
+  }
+}
