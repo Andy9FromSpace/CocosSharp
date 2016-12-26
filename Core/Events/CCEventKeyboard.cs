@@ -158,10 +158,18 @@ namespace CocosSharp
 		/// ENTER key
 		/// </summary>
 		Enter = 13,
-		/// <summary>
-		/// CAPS LOCK key
-		/// </summary>
-		CapsLock = 20,
+        /// <summary>
+        /// SHIFT key
+        /// </summary>
+        Shift = 16,
+        /// <summary>
+        /// CONTROL key
+        /// </summary>
+        Control = 17,
+        /// <summary>
+        /// CAPS LOCK key
+        /// </summary>
+        CapsLock = 20,
 		/// <summary>
 		/// ESC key
 		/// </summary>
