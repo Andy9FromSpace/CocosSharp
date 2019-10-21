@@ -17,6 +17,7 @@ using SharpDX.WIC;
 using FactoryImaging = SharpDX.WIC.ImagingFactory;
 using Color4 = SharpDX.Color4;
 using Vector2 = SharpDX.Vector2;
+using Factory2 = SharpDX.Direct2D1.Factory2;
 
 namespace CocosSharp
 {
